@@ -15,7 +15,6 @@
 		7C05F0DB253ED3F70017E12F /* Cars.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C05F0DA253ED3F70017E12F /* Cars.json */; };
 		7CB27A0E253E19B100CE98CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB27A0D253E19B100CE98CE /* AppDelegate.swift */; };
 		7CB27A10253E19B100CE98CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB27A0F253E19B100CE98CE /* SceneDelegate.swift */; };
-		7CB27A12253E19B100CE98CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB27A11253E19B100CE98CE /* ContentView.swift */; };
 		7CB27A14253E19B300CE98CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CB27A13253E19B300CE98CE /* Assets.xcassets */; };
 		7CB27A17253E19B300CE98CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CB27A16253E19B300CE98CE /* Preview Assets.xcassets */; };
 		7CB27A1A253E19B300CE98CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CB27A18253E19B300CE98CE /* LaunchScreen.storyboard */; };
@@ -44,7 +43,6 @@
 		7CB27A0A253E19B100CE98CE /* FSHomework1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FSHomework1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CB27A0D253E19B100CE98CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CB27A0F253E19B100CE98CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7CB27A11253E19B100CE98CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7CB27A13253E19B300CE98CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CB27A16253E19B300CE98CE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7CB27A19253E19B300CE98CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 				7CB27A0F253E19B100CE98CE /* SceneDelegate.swift */,
 				7C05F0DA253ED3F70017E12F /* Cars.json */,
 				7CB27A13253E19B300CE98CE /* Assets.xcassets */,
-				7CB27A11253E19B100CE98CE /* ContentView.swift */,
 				7CB27A1B253E19B300CE98CE /* Info.plist */,
 				7CB27A18253E19B300CE98CE /* LaunchScreen.storyboard */,
 				7CB27A15253E19B300CE98CE /* Preview Content */,
@@ -255,7 +252,6 @@
 				7CB27A2C253E1A3800CE98CE /* CarsPresenter.swift in Sources */,
 				7CB27A2A253E1A3800CE98CE /* CarsRouter.swift in Sources */,
 				7CD80031253F4DC900CF6B64 /* NewCarInteractor.swift in Sources */,
-				7CB27A12253E19B100CE98CE /* ContentView.swift in Sources */,
 				7CB27A2B253E1A3800CE98CE /* CarsInteractor.swift in Sources */,
 				7C053B8525434AFC00C9E7B3 /* CarFilterTableViewController.swift in Sources */,
 				7CB27A28253E1A3800CE98CE /* CarsViewController.swift in Sources */,

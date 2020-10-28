@@ -25,19 +25,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 			self.window?.rootViewController = navigationController
 			self.window!.makeKeyAndVisible()
 		}
-		
-//		guard let windowScene = (scene as? UIWindowScene) else { return }
-//
-//		let rootView = CarListRouter.createModule()
-//
-//		let navigationController = UINavigationController()
-//		navigationController.navigationBar.prefersLargeTitles = true
-//		navigationController.viewControllers = [rootView]
-//
-//		window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-//		window?.windowScene = windowScene
-//		window?.rootViewController = navigationController
-//		window?.makeKeyAndVisible()
 	}
 
 	func sceneDidDisconnect(_ scene: UIScene) {

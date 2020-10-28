@@ -8,8 +8,6 @@
 import UIKit
 
 final class TextField: UITextField {
-	weak var textLabel: UILabel!
-	
 	init(placeholder: String) {
 		super.init(frame: .zero)
 		

@@ -8,8 +8,6 @@
 import Foundation
 
 final class CarsInteractor {
-	var presenter: CarsPresenter?
-	
 	func getCars(completion: @escaping ([Car]) -> (Void)) {
 		let carsArray: [Car] = self.readFromJSON()
 		completion(carsArray)

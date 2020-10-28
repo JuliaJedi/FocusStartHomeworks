@@ -8,8 +8,6 @@
 import Foundation
 
 final class NewCarInteractor {
-	var presenter: NewCarPresenter?
-	
 	func updateCars(newCar: Car) {
 		self.writeToJSON(newCar: newCar)
 	}

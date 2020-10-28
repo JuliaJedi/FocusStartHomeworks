@@ -14,8 +14,6 @@ final class CarsRouter {
 		let presenter = CarsPresenter(interactor: interactor, router: router)
 		let viewController = CarsViewController(presenter: presenter)
 		
-		interactor.presenter = presenter
-		
 		return viewController
 	}
 	

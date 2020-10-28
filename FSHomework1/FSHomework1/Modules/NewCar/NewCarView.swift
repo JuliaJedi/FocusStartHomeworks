@@ -8,10 +8,10 @@
 import UIKit
 
 final class NewCarView: UIView {
-	var newCar: Car?
+	private var newCar: Car?
 	var onTapCreateNewCar: ((Car) -> Void)?
 	
-	private var addButton: UIButton = {
+	private let addButton: UIButton = {
 		let addButton = UIButton()
 		addButton.translatesAutoresizingMaskIntoConstraints = false
 		addButton.isEnabled = false
@@ -22,15 +22,13 @@ final class NewCarView: UIView {
 		return addButton
 	}()
 	
-	private var manufacturer: UITextField = TextField(placeholder: "Введите производителя")
-	private var model: UITextField = TextField(placeholder: "Введите модель")
-	private var body: UITextField = TextField(placeholder: "Введите тип кузова")
-	private var yearOfIssue: UITextField = TextField(placeholder: "Введите год выпуска")
-	private var carNumber: UITextField = TextField(placeholder: "Введите гос. номер")
+	private let manufacturer: UITextField = TextField(placeholder: "Введите производителя")
+	private let model: UITextField = TextField(placeholder: "Введите модель")
+	private let body: UITextField = TextField(placeholder: "Введите тип кузова")
+	private let yearOfIssue: UITextField = TextField(placeholder: "Введите год выпуска")
+	private let carNumber: UITextField = TextField(placeholder: "Введите гос. номер")
 	
-	private var bodyPicker = UIPickerView()
-	
-	weak var view: UIView!
+	private let bodyPicker = UIPickerView()
 	
 	init() {
 		super.init(frame: .zero)
@@ -47,21 +45,20 @@ final class NewCarView: UIView {
 		let view = UIView()
 		self.addSubview(view)
 		view.translatesAutoresizingMaskIntoConstraints = false
-		self.view = view
 		
 		NSLayoutConstraint.activate([
-			self.topAnchor.constraint(equalTo: self.view.topAnchor),
-			self.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-			self.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-			self.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+			self.topAnchor.constraint(equalTo: self.topAnchor),
+			self.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+			self.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+			self.trailingAnchor.constraint(equalTo: self.trailingAnchor),
 		])
 		
-		self.view.addSubview(self.manufacturer)
-		self.view.addSubview(self.model)
-		self.view.addSubview(self.body)
-		self.view.addSubview(self.yearOfIssue)
-		self.view.addSubview(self.carNumber)
-		self.view.addSubview(self.addButton)
+		self.addSubview(self.manufacturer)
+		self.addSubview(self.model)
+		self.addSubview(self.body)
+		self.addSubview(self.yearOfIssue)
+		self.addSubview(self.carNumber)
+		self.addSubview(self.addButton)
 		
 		self.setConstraints()
 		
@@ -83,8 +80,13 @@ final class NewCarView: UIView {
 			return
 		}
 		
-		self.newCar = Car(manufacturer: manufacturer, model: model, body: Car.Body(rawValue: body)!, yearOfIssue: Int(yearOfIssue), carNumber: carNumber)
-		self.onTapCreateNewCar?(newCar!)
+		if let body = Car.Body(rawValue: body) {
+			self.newCar = Car(manufacturer: manufacturer, model: model, body: body, yearOfIssue: Int(yearOfIssue), carNumber: carNumber)
+		}
+		
+		if let newCar = self.newCar {
+			self.onTapCreateNewCar?(newCar)
+		}
 	}
 }
 
@@ -112,7 +114,7 @@ extension NewCarView: UITextFieldDelegate {
 
 extension NewCarView: UIPickerViewDelegate {
 	func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-		return Car.Body.allCases[row].rawValue
+		Car.Body.allCases[row].rawValue
 	}
 	
 	func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -123,11 +125,11 @@ extension NewCarView: UIPickerViewDelegate {
 
 extension NewCarView: UIPickerViewDataSource {
 	func numberOfComponents(in pickerView: UIPickerView) -> Int {
-		return 1
+		1
 	}
 	
 	func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-		return Car.Body.allCases.count
+		Car.Body.allCases.count
 	}
 }
 

@@ -7,17 +7,17 @@
 
 import UIKit
 
-protocol ICarFilterView {
-	func filter(body: Car.Body?)
+protocol ICarFilterTable: class {
+	var carViewDelegate: ICarsView? { get }
+	var didSelectBody: ((Car.Body) -> Void)? { get set }
 }
 
-final class CarFilterTable: UITableView {
-	var selectedBody: Car.Body?
-	var didSelectBody: ((Car.Body) -> Void)?
-	var didResetFilter: ((Car.Body) -> Void)?
-	var carFilterViewDelegate: ICarFilterView?
+final class CarFilterTable: UITableView, ICarFilterTable {
+	private var selectedBody: Car.Body?
+	private weak var tableView: UITableView!
 	
-	weak var tableView: UITableView!
+	var didSelectBody: ((Car.Body) -> Void)?
+	var carViewDelegate: ICarsView?
 	
 	init() {
 		super.init(frame: .zero, style: UITableView.Style.plain)

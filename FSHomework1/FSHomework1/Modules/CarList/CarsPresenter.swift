@@ -10,8 +10,8 @@ import UIKit
 final class CarsPresenter {
 	private let router: CarsRouter
 	private let interactor: CarsInteractor
-	private var viewController: CarsViewController?
-	private var ui: CarsView?
+	private weak var viewController: CarsViewController?
+	private weak var ui: ICarsView?
 	
 	init(interactor: CarsInteractor, router: CarsRouter) {
 		self.interactor = interactor
@@ -46,7 +46,7 @@ private extension CarsPresenter {
 	
 	func filterCars() {
 		let filterCarModule = CarFilterRouter.createModule()
-		filterCarModule.carsFilterView.carFilterViewDelegate = self.ui
+		filterCarModule.carsFilterView.carViewDelegate = self.ui
 		let navigationController = UINavigationController(rootViewController: filterCarModule)
 		self.viewController?.present(navigationController, animated: true, completion: nil)
 	}

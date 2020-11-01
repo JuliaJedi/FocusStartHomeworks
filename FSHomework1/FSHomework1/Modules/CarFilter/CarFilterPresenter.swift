@@ -8,8 +8,8 @@
 import UIKit
 
 final class CarFilterPresenter {
-	private var viewController: CarFilterTableViewController?
-	private var ui: CarFilterTable?
+	private weak var viewController: CarFilterTableViewController?
+	private weak var ui: ICarFilterTable?
 	
 	func didLoad(ui: CarFilterTable, viewController: CarFilterTableViewController) {
 		self.viewController = viewController
@@ -23,7 +23,7 @@ final class CarFilterPresenter {
 
 private extension CarFilterPresenter {
 	func saveFilter(carBody: Car.Body) {
-		self.ui?.carFilterViewDelegate?.filter(body: carBody)
+		self.ui?.carViewDelegate?.set(selectedBody: carBody)
 		self.viewController?.dismiss(animated: true, completion: nil)
 	}
 }

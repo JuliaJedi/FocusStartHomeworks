@@ -39,7 +39,7 @@ extension CarFilterTableViewController {
 	}
 	
 	@objc private func resetFilter(_ sender: UIButton) {
-		self.carsFilterView.carFilterViewDelegate?.filter(body: nil)
+		self.carsFilterView.carViewDelegate?.set(selectedBody: nil)
 		self.dismiss(animated: true, completion: nil)
 	}
 }

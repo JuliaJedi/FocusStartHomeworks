@@ -7,21 +7,34 @@
 
 import UIKit
 
+protocol ICarsView: class {
+	var cars: [Car]? { get set }
+	
+	func set(selectedBody: Car.Body?)
+}
+
 final class CarsView: UIView {
 	var cars: [Car]? {
 		didSet { self.collectionView.reloadData() }
 	}
 	
-	var filteredCars: [Car]? {
+	private var filteredCars: [Car]? {
 		didSet { self.collectionView.reloadData() }
 	}
 	
-	var selectedBody: Car.Body? {
-		didSet { self.filteredCars = self.cars?.filter { $0.body == self.selectedBody } }
+	private var selectedBody: Car.Body? {
+		didSet {
+			if selectedBody != nil {
+				self.filteredCars = self.cars?.filter { $0.body == self.selectedBody }
+				self.filterIsActive = true
+			} else {
+				self.filterIsActive = false
+				self.collectionView.reloadData()
+			}
+		}
 	}
 	
-	var filterIsActive: Bool = false
-	var delegate: ICarFilterView?
+	private var filterIsActive: Bool = false
 	weak var collectionView: UICollectionView!
 	
 	init() {
@@ -118,14 +131,8 @@ extension CarsView: UICollectionViewDelegateFlowLayout {
 	}
 }
 
-extension CarsView: ICarFilterView {
-	func filter(body: Car.Body?) {
-		if body != nil {
-			self.selectedBody = body
-			self.filterIsActive = true
-		} else {
-			self.filterIsActive = false
-			self.collectionView.reloadData()
-		}
+extension CarsView: ICarsView {
+	func set(selectedBody: Car.Body?) {
+		self.selectedBody = selectedBody
 	}
 }

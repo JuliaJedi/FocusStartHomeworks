@@ -8,8 +8,8 @@
 final class NewCarPresenter {
 	private let router: NewCarRouter
 	private let interactor: NewCarInteractor
-	private var viewController: NewCarViewController?
-	private var ui: NewCarView?
+	private weak var viewController: NewCarViewController?
+	private weak var ui: INewCarView?
 	
 	init(interactor: NewCarInteractor, router: NewCarRouter) {
 		self.interactor = interactor

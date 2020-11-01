@@ -7,8 +7,13 @@
 
 import UIKit
 
-final class NewCarView: UIView {
+protocol INewCarView: class {
+	var onTapCreateNewCar: ((Car) -> Void)? { get set }
+}
+
+final class NewCarView: UIView, INewCarView {
 	private var newCar: Car?
+	
 	var onTapCreateNewCar: ((Car) -> Void)?
 	
 	private let addButton: UIButton = {

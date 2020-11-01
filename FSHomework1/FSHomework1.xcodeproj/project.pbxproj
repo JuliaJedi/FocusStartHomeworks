@@ -13,6 +13,9 @@
 		7C053B88254366AE00C9E7B3 /* CarFilterTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C053B87254366AE00C9E7B3 /* CarFilterTableCell.swift */; };
 		7C053B9025436F5500C9E7B3 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C053B8F25436F5500C9E7B3 /* TextField.swift */; };
 		7C05F0DB253ED3F70017E12F /* Cars.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C05F0DA253ED3F70017E12F /* Cars.json */; };
+		7CB15D35254F21EE0001779D /* NewCarAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB15D34254F21EE0001779D /* NewCarAssembly.swift */; };
+		7CB15D39254F255A0001779D /* CarsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB15D38254F255A0001779D /* CarsAssembly.swift */; };
+		7CB15D3C254F25AC0001779D /* CarFilterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB15D3B254F25AC0001779D /* CarFilterAssembly.swift */; };
 		7CB27A0E253E19B100CE98CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB27A0D253E19B100CE98CE /* AppDelegate.swift */; };
 		7CB27A10253E19B100CE98CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB27A0F253E19B100CE98CE /* SceneDelegate.swift */; };
 		7CB27A14253E19B300CE98CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CB27A13253E19B300CE98CE /* Assets.xcassets */; };
@@ -40,6 +43,9 @@
 		7C053B87254366AE00C9E7B3 /* CarFilterTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarFilterTableCell.swift; sourceTree = "<group>"; };
 		7C053B8F25436F5500C9E7B3 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		7C05F0DA253ED3F70017E12F /* Cars.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Cars.json; sourceTree = "<group>"; };
+		7CB15D34254F21EE0001779D /* NewCarAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCarAssembly.swift; sourceTree = "<group>"; };
+		7CB15D38254F255A0001779D /* CarsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsAssembly.swift; sourceTree = "<group>"; };
+		7CB15D3B254F25AC0001779D /* CarFilterAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarFilterAssembly.swift; sourceTree = "<group>"; };
 		7CB27A0A253E19B100CE98CE /* FSHomework1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FSHomework1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CB27A0D253E19B100CE98CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CB27A0F253E19B100CE98CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +145,7 @@
 				7C053B8425434AFC00C9E7B3 /* CarFilterTableViewController.swift */,
 				7CC535DC2542E462004F59B8 /* CarFilterPresenter.swift */,
 				7C053B7D2543390800C9E7B3 /* CarFilterRouter.swift */,
+				7CB15D3B254F25AC0001779D /* CarFilterAssembly.swift */,
 			);
 			path = CarFilter;
 			sourceTree = "<group>";
@@ -152,6 +159,7 @@
 				7CB27A26253E1A3800CE98CE /* CarsPresenter.swift */,
 				7CB27A24253E1A3700CE98CE /* CarsRouter.swift */,
 				7CB27A25253E1A3800CE98CE /* CarsInteractor.swift */,
+				7CB15D38254F255A0001779D /* CarsAssembly.swift */,
 			);
 			path = CarList;
 			sourceTree = "<group>";
@@ -164,6 +172,7 @@
 				7CD80033253F4DF300CF6B64 /* NewCarPresenter.swift */,
 				7CD8002D253F4DB100CF6B64 /* NewCarRouter.swift */,
 				7CD80030253F4DC900CF6B64 /* NewCarInteractor.swift */,
+				7CB15D34254F21EE0001779D /* NewCarAssembly.swift */,
 				7C053B8F25436F5500C9E7B3 /* TextField.swift */,
 			);
 			path = NewCar;
@@ -246,6 +255,7 @@
 				7C053B9025436F5500C9E7B3 /* TextField.swift in Sources */,
 				7C053B822543499F00C9E7B3 /* CarFilterTable.swift in Sources */,
 				7CD8002E253F4DB100CF6B64 /* NewCarRouter.swift in Sources */,
+				7CB15D35254F21EE0001779D /* NewCarAssembly.swift in Sources */,
 				7CB27A31253EB0BE00CE98CE /* CarCell.swift in Sources */,
 				7C053B7E2543390800C9E7B3 /* CarFilterRouter.swift in Sources */,
 				7CB27A29253E1A3800CE98CE /* Car.swift in Sources */,
@@ -253,8 +263,10 @@
 				7CB27A2A253E1A3800CE98CE /* CarsRouter.swift in Sources */,
 				7CD80031253F4DC900CF6B64 /* NewCarInteractor.swift in Sources */,
 				7CB27A2B253E1A3800CE98CE /* CarsInteractor.swift in Sources */,
+				7CB15D3C254F25AC0001779D /* CarFilterAssembly.swift in Sources */,
 				7C053B8525434AFC00C9E7B3 /* CarFilterTableViewController.swift in Sources */,
 				7CB27A28253E1A3800CE98CE /* CarsViewController.swift in Sources */,
+				7CB15D39254F255A0001779D /* CarsAssembly.swift in Sources */,
 				7CC535DD2542E462004F59B8 /* CarFilterPresenter.swift in Sources */,
 				7C053B88254366AE00C9E7B3 /* CarFilterTableCell.swift in Sources */,
 				7CD80038253F4EAD00CF6B64 /* NewCarViewController.swift in Sources */,

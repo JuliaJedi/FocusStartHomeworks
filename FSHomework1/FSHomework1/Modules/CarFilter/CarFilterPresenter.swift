@@ -8,8 +8,13 @@
 import UIKit
 
 final class CarFilterPresenter {
+	private let router: CarFilterRouter
 	private weak var viewController: CarFilterTableViewController?
 	private weak var ui: ICarFilterTable?
+	
+	init(router: CarFilterRouter) {
+		self.router = router
+	}
 	
 	func didLoad(ui: CarFilterTable, viewController: CarFilterTableViewController) {
 		self.viewController = viewController
@@ -24,6 +29,9 @@ final class CarFilterPresenter {
 private extension CarFilterPresenter {
 	func saveFilter(carBody: Car.Body) {
 		self.ui?.carViewDelegate?.set(selectedBody: carBody)
-		self.viewController?.dismiss(animated: true, completion: nil)
+		
+		if let viewController = self.viewController {
+			self.router.closeFilter(viewController: viewController)
+		}
 	}
 }

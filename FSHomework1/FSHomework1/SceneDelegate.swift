@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		if let windowScene = scene as? UIWindowScene {
 			self.window = UIWindow(windowScene: windowScene)
 
-			let rootView = CarsRouter.createModule()
+			let rootView = CarsAssembly.createModule()
 
 			let navigationController = UINavigationController()
 			navigationController.navigationBar.prefersLargeTitles = true

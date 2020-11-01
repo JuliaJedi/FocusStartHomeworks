@@ -8,17 +8,12 @@
 import UIKit
 
 final class CarsRouter {
-	static func createModule() -> CarsViewController {
-		let interactor = CarsInteractor()
-		let router = CarsRouter()
-		let presenter = CarsPresenter(interactor: interactor, router: router)
-		let viewController = CarsViewController(presenter: presenter)
-		
-		return viewController
+	func openAddNewCar(navigationController: UINavigationController) {
+		let newCarModule = NewCarAssembly.createModule()
+		navigationController.pushViewController(newCarModule, animated: true)
 	}
 	
-	func pushToAddNewCar(navigationController: UINavigationController) {
-		let newCarModule = NewCarRouter.createModule()
-		navigationController.pushViewController(newCarModule, animated: true)
+	func openFilter(navigationController: UINavigationController, viewController: UIViewController) {
+		viewController.present(navigationController, animated: true, completion: nil)
 	}
 }

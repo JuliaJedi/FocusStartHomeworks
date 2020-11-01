@@ -69,6 +69,12 @@ final class CarsView: UIView {
 	}
 }
 
+extension CarsView: ICarsView {
+	func set(selectedBody: Car.Body?) {
+		self.selectedBody = selectedBody
+	}
+}
+
 extension CarsView: UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView,
 						numberOfItemsInSection section: Int) -> Int {
@@ -128,11 +134,5 @@ extension CarsView: UICollectionViewDelegateFlowLayout {
 						layout collectionViewLayout: UICollectionViewLayout,
 						minimumLineSpacingForSectionAt section: Int) -> CGFloat {
 		return 0
-	}
-}
-
-extension CarsView: ICarsView {
-	func set(selectedBody: Car.Body?) {
-		self.selectedBody = selectedBody
 	}
 }

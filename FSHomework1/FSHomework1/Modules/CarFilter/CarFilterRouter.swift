@@ -5,11 +5,10 @@
 //  Created by Афанасьева Юлия Геннадьевна on 23.10.2020.
 //
 
-import Foundation
+import UIKit
 
 final class CarFilterRouter {
-	static func createModule() -> CarFilterTableViewController {
-		let viewController = CarFilterTableViewController(presenter: CarFilterPresenter())
-		return viewController
+	func closeFilter(viewController: UIViewController) {
+		viewController.dismiss(animated: true, completion: nil)
 	}
 }

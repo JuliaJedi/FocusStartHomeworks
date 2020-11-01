@@ -41,13 +41,17 @@ private extension CarsPresenter {
 	}
 	
 	func addNewCar() {
-		self.router.pushToAddNewCar(navigationController: (self.viewController?.navigationController)!)
+		self.router.openAddNewCar(navigationController: (self.viewController?.navigationController)!)
 	}
 	
 	func filterCars() {
-		let filterCarModule = CarFilterRouter.createModule()
+		let filterCarModule = CarFilterAssembly.createModule()
 		filterCarModule.carsFilterView.carViewDelegate = self.ui
+		
 		let navigationController = UINavigationController(rootViewController: filterCarModule)
-		self.viewController?.present(navigationController, animated: true, completion: nil)
+		
+		if let viewController = self.viewController {
+			self.router.openFilter(navigationController: navigationController, viewController: viewController)
+		}
 	}
 }

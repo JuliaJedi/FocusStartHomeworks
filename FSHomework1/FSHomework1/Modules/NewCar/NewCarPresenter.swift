@@ -29,6 +29,9 @@ final class NewCarPresenter {
 extension NewCarPresenter {
 	func updateCars(newCar: Car) {
 		self.interactor.updateCars(newCar: newCar)
-		self.router.openCars(navigationController: (self.viewController?.navigationController)!)
+		
+		if let viewController = self.viewController, let navigationController = viewController.navigationController {
+			self.router.openCars(navigationController: navigationController)
+		}
 	}
 }

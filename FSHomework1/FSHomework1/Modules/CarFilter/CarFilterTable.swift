@@ -14,7 +14,7 @@ protocol ICarFilterTable: class {
 
 final class CarFilterTable: UITableView, ICarFilterTable {
 	private var selectedBody: Car.Body?
-	private weak var tableView: UITableView!
+	private weak var tableView: UITableView?
 	
 	var didSelectBody: ((Car.Body) -> Void)?
 	var carViewDelegate: ICarsView?
@@ -48,6 +48,8 @@ extension CarFilterTable: UITableViewDataSource, UITableViewDelegate {
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		self.selectedBody = Car.Body.allCases[indexPath.row]
-		self.didSelectBody?(self.selectedBody!)
+		if let selectedBody = self.selectedBody {
+			self.didSelectBody?(selectedBody)
+		}
 	}
 }

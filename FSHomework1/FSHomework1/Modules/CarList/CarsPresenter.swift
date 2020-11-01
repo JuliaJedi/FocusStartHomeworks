@@ -41,7 +41,9 @@ private extension CarsPresenter {
 	}
 	
 	func addNewCar() {
-		self.router.openAddNewCar(navigationController: (self.viewController?.navigationController)!)
+		if let viewController = self.viewController, let navigationController = viewController.navigationController {
+			self.router.openAddNewCar(navigationController: navigationController)
+		}
 	}
 	
 	func filterCars() {

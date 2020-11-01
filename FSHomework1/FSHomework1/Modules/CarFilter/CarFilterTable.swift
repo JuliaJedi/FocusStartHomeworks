@@ -37,7 +37,7 @@ final class CarFilterTable: UITableView, ICarFilterTable {
 
 extension CarFilterTable: UITableViewDataSource, UITableViewDelegate {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return Car.Body.allCases.count
+		Car.Body.allCases.count
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

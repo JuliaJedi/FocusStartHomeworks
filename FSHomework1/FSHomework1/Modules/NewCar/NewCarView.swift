@@ -130,7 +130,7 @@ extension NewCarView: UIPickerViewDelegate {
 
 extension NewCarView: UIPickerViewDataSource {
 	func numberOfComponents(in pickerView: UIPickerView) -> Int {
-		1
+		return 1
 	}
 	
 	func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {

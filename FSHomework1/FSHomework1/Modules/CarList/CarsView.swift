@@ -115,13 +115,13 @@ extension CarsView: UICollectionViewDelegateFlowLayout {
 	func collectionView(_ collectionView: UICollectionView,
 						layout collectionViewLayout: UICollectionViewLayout,
 						sizeForItemAt indexPath: IndexPath) -> CGSize {
-		return CGSize(width: collectionView.bounds.width, height: 150)
+		CGSize(width: collectionView.bounds.width, height: 150)
 	}
 	
 	func collectionView(_ collectionView: UICollectionView,
 						layout collectionViewLayout: UICollectionViewLayout,
 						insetForSectionAt section: Int) -> UIEdgeInsets {
-		return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+		UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 	}
 	
 	func collectionView(_ collectionView: UICollectionView,

@@ -176,58 +176,49 @@ extension NewCarView {
 			self.addButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
 		])
 		
-		let manufacturerTopConstraint = NSLayoutConstraint(item: self.manufacturer,
-											   attribute: .top,
-											   relatedBy: .equal,
-											   toItem: self.safeAreaLayoutGuide,
-											   attribute: .top,
-											   multiplier: 1.0,
-											   constant: 20)
-		manufacturerTopConstraint.isActive = true
-		
-		let modelTopConstraint = NSLayoutConstraint(item: self.model,
-											   attribute: .top,
-											   relatedBy: .equal,
-											   toItem: self.manufacturer,
-											   attribute: .bottom,
-											   multiplier: 1.0,
-											   constant: 20)
-		modelTopConstraint.isActive = true
-		
-		let bodyTopConstraint = NSLayoutConstraint(item: self.body,
-											   attribute: .top,
-											   relatedBy: .equal,
-											   toItem: self.model,
-											   attribute: .bottom,
-											   multiplier: 1.0,
-											   constant: 20)
-		bodyTopConstraint.isActive = true
-		
-		let yearOfIssueTopConstraint = NSLayoutConstraint(item: self.yearOfIssue,
-											   attribute: .top,
-											   relatedBy: .equal,
-											   toItem: self.body,
-											   attribute: .bottom,
-											   multiplier: 1.0,
-											   constant: 20)
-		yearOfIssueTopConstraint.isActive = true
-		
-		let carNumberTopConstraint = NSLayoutConstraint(item: self.carNumber,
-											   attribute: .top,
-											   relatedBy: .equal,
-											   toItem: self.yearOfIssue,
-											   attribute: .bottom,
-											   multiplier: 1.0,
-											   constant: 20)
-		carNumberTopConstraint.isActive = true
-		
-		let addButtonTopConstraint = NSLayoutConstraint(item: self.addButton,
-											   attribute: .top,
-											   relatedBy: .equal,
-											   toItem: self.carNumber,
-											   attribute: .bottom,
-											   multiplier: 1.0,
-											   constant: 20)
-		addButtonTopConstraint.isActive = true
+		NSLayoutConstraint.activate([NSLayoutConstraint(item: self.manufacturer,
+														attribute: .top,
+														relatedBy: .equal,
+														toItem: self.safeAreaLayoutGuide,
+														attribute: .top,
+														multiplier: 1.0,
+														constant: 20),
+									 NSLayoutConstraint(item: self.model,
+														attribute: .top,
+														relatedBy: .equal,
+														toItem: self.manufacturer,
+														attribute: .bottom,
+														multiplier: 1.0,
+														constant: 20),
+									 NSLayoutConstraint(item: self.body,
+														attribute: .top,
+														relatedBy: .equal,
+														toItem: self.model,
+														attribute: .bottom,
+														multiplier: 1.0,
+														constant: 20),
+									 NSLayoutConstraint(item: self.yearOfIssue,
+														attribute: .top,
+														relatedBy: .equal,
+														toItem: self.body,
+														attribute: .bottom,
+														multiplier: 1.0,
+														constant: 20),
+									 NSLayoutConstraint(item: self.carNumber,
+														attribute: .top,
+														relatedBy: .equal,
+														toItem: self.yearOfIssue,
+														attribute: .bottom,
+														multiplier: 1.0,
+														constant: 20),
+									 NSLayoutConstraint(item: self.addButton,
+														attribute: .top,
+														relatedBy: .equal,
+														toItem: self.carNumber,
+														attribute: .bottom,
+														multiplier: 1.0,
+														constant: 20)
+									 
+		])
 	}
 }

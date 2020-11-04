@@ -79,15 +79,9 @@ extension CarsView: UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView,
 						numberOfItemsInSection section: Int) -> Int {
 		if filterIsActive {
-			guard let filteredCars = self.filteredCars else {
-				return 0
-			}
-			return filteredCars.count
+			return self.filteredCars?.count ?? 0
 		} else {
-			guard let cars = self.cars else {
-				return 0
-			}
-			return cars.count
+			return self.cars?.count ?? 0
 		}
 	}
 	

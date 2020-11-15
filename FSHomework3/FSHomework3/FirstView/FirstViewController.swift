@@ -10,8 +10,8 @@ import UIKit
 final class FirstViewController: UIViewController {
 	private let firstView = FirstView(frame: UIScreen.main.bounds)
 	
-	override func viewDidLoad() {
-		super.viewDidLoad()
+	override func loadView() {
+		super.loadView()
 		
 		self.view = firstView
 	}

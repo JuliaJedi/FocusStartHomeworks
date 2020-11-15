@@ -10,8 +10,8 @@ import UIKit
 final class SecondViewController: UIViewController {
 	private let secondView = SecondView()
 	
-	override func viewDidLoad() {
-		super.viewDidLoad()
+	override func loadView() {
+		super.loadView()
 		
 		self.view = secondView
 	}

@@ -10,8 +10,8 @@ import UIKit
 final class ThirdViewController: UIViewController {
 	private let thirdView = ThirdView()
 	
-	override func viewDidLoad() {
-		super.viewDidLoad()
+	override func loadView() {
+		super.loadView()
 		
 		self.view = self.thirdView
 	}

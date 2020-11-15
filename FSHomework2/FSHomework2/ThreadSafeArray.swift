@@ -9,12 +9,14 @@ import Foundation
 
 final class ThreadSafeArray<Element> {
 	private var items = [Element]()
-	private var isolatedQueue = DispatchQueue(label: "isolatedQueue", attributes: .concurrent)
+	private let isolatedQueue = DispatchQueue(label: "isolatedQueue", attributes: .concurrent)
+	
 	var isEmpty: Bool {
 		self.isolatedQueue.sync {
 			return self.items.isEmpty
 		}
 	}
+	
 	var count: Int {
 		self.isolatedQueue.sync {
 			return self.items.count

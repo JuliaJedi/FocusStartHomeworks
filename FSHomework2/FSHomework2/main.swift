@@ -11,7 +11,7 @@ var notThreadSafeArray = [Int]()
 let threadSafeArray = ThreadSafeArray<Int>()
 
 let arrayGroup = DispatchGroup()
-let workerQueue = DispatchQueue(label: "myQueue", attributes: .concurrent)
+let workerQueue = DispatchQueue.global(qos: .userInitiated)
 
 let workItem = DispatchWorkItem {
 	for number in 0...1000 {

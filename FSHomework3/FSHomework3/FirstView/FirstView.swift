@@ -8,17 +8,17 @@
 import UIKit
 
 final class FirstView: UIView {
-	private var stackView = UIStackView()
+	private let stackView = UIStackView()
 	
-	private var smallLabel = UILabel()
-	private var mediumLabel = UILabel()
-	private var largeLabel = UILabel()
+	private let smallLabel = UILabel()
+	private let mediumLabel = UILabel()
+	private let largeLabel = UILabel()
 	
-	public var roundButton = UIButton()
-	private var roundedButton = UIButton()
+	private let roundButton = UIButton()
+	private let roundedButton = UIButton()
 	
-	private var image = UIImageView()
-	private var activityIndicator = UIActivityIndicatorView()
+	private let image = UIImageView()
+	private let activityIndicator = UIActivityIndicatorView()
 	
 	private enum Constants {
 		static let offset: CGFloat = 8

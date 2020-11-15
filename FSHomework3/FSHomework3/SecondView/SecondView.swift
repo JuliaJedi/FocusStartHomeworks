@@ -8,7 +8,7 @@
 import UIKit
 
 final class SecondView: UIView {
-	private var scrollView = UIScrollView()
+	private let scrollView = UIScrollView()
 	private var imageView = UIImageView()
 	private var titleLabel = UILabel()
 	private var textLabel = UILabel()

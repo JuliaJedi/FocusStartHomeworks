@@ -13,7 +13,7 @@ final class ThirdView: UIView {
 	private let passwordField = UITextField()
 	private let enterButton = UIButton()
 	
-	private var keyboardHandler = KeyboardHandler()
+	private let keyboardHandler = KeyboardHandler()
 	private var enterButtonConstraint = NSLayoutConstraint()
 	
 	private enum Constants {

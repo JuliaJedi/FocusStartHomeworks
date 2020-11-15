@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ThirdViewController: UIViewController {
+final class ThirdViewController: UIViewController {
 	private let thirdView = ThirdView()
 	
 	override func viewDidLoad() {

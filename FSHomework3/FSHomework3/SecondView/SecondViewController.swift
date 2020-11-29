@@ -11,8 +11,6 @@ final class SecondViewController: UIViewController {
 	private let secondView = SecondView()
 	
 	override func loadView() {
-		super.loadView()
-		
-		self.view = secondView
+		self.view = self.secondView
 	}
 }

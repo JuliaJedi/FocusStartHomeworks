@@ -26,12 +26,20 @@ final class FirstView: UIView {
 		static let mediumFont: CGFloat = 20
 		static let largeFont: CGFloat = 25
 		
+		static let noLimitNumberOfLines = 0
+		static let largeLabelNumberOfLines = 2
+		
 		static let roundButtonSize = CGSize(width: 50, height: 50)
 		static let roundedButtonSize = CGSize(width: 150, height: 50)
+		
+		static let buttonBorderWidth: CGFloat = 1
+		
+		static let roundButtonCornerRadius: CGFloat = roundButtonSize.width / 2
+		static let roundedButtonCornerRadius: CGFloat = 8
 	}
 	
-	override init(frame: CGRect) {
-		super.init(frame: frame)
+	init() {
+		super.init(frame: .zero)
 		self.configureView()
 	}
 	
@@ -39,16 +47,9 @@ final class FirstView: UIView {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
-	override func layoutSubviews() {
-		super.layoutSubviews()
-		self.roundButton.layer.cornerRadius = self.roundButton.frame.size.width / 2
-	}
-	
 	func configureView() {
-		self.configureViewAppearance()
 		self.configureLayout()
-		
-		self.layoutIfNeeded()
+		self.configureViewAppearance()
 	}
 }
 
@@ -69,43 +70,44 @@ private extension FirstView {
 	func configureSmallLabelAppearance() {
 		self.smallLabel.text = "Small text"
 		self.smallLabel.textAlignment = .center
-		self.smallLabel.numberOfLines = 0
+		self.smallLabel.numberOfLines = Constants.noLimitNumberOfLines
 	}
 	
 	func configureMediumLabelAppearance() {
 		self.mediumLabel.text = "Medium text"
 		self.mediumLabel.textAlignment = .center
 		self.mediumLabel.font = .monospacedDigitSystemFont(ofSize: Constants.mediumFont, weight: .bold)
-		self.mediumLabel.numberOfLines = 0
+		self.mediumLabel.numberOfLines = Constants.noLimitNumberOfLines
 	}
 	
 	func configureLargeLabelAppearance() {
 		self.largeLabel.text = "Text text text text text text text text text text text text text text text"
 		self.largeLabel.textAlignment = .center
 		self.largeLabel.font = UIFont(name: "Kohinoor Bangla", size: Constants.largeFont)
-		self.largeLabel.numberOfLines = 2
+		self.largeLabel.numberOfLines = Constants.largeLabelNumberOfLines
 	}
 	
 	func configureRoundButtonAppearance() {
-		self.roundButton.layer.borderWidth = 1
+		self.roundButton.layer.borderWidth = Constants.buttonBorderWidth
 		self.roundButton.layer.borderColor = UIColor.black.cgColor
+		self.roundButton.frame.size = Constants.roundButtonSize
+		self.roundButton.layer.cornerRadius = Constants.roundButtonCornerRadius
 	}
 	
 	func configureRoundedButtonAppearance() {
-		self.roundedButton.layer.cornerRadius = 8
-		self.roundedButton.layer.borderWidth = 1
+		self.roundedButton.layer.borderWidth = Constants.buttonBorderWidth
 		self.roundedButton.layer.borderColor = UIColor.black.cgColor
+		self.roundedButton.frame.size = Constants.roundedButtonSize
+		self.roundedButton.layer.cornerRadius = Constants.roundedButtonCornerRadius
 	}
 	
 	func configureImageAppearance() {
-		self.image.translatesAutoresizingMaskIntoConstraints = false
 		self.image.image = UIImage(named: "cloud_mtn")
 		self.image.contentMode = .scaleAspectFill
 		self.image.clipsToBounds = true
 	}
 	
 	func configureActivityIndicatorAppearance() {
-		self.activityIndicator.translatesAutoresizingMaskIntoConstraints = false
 		self.activityIndicator.color = .black
 		self.activityIndicator.startAnimating()
 	}
@@ -130,7 +132,7 @@ private extension FirstView {
 		self.stackView.axis = .vertical
 		self.stackView.alignment = .center
 		self.stackView.distribution = .equalSpacing
-		self.stackView.spacing = 8
+		self.stackView.spacing = Constants.offset
 		
 		NSLayoutConstraint.activate([
 			self.stackView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),

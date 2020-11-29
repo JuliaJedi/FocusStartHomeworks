@@ -9,9 +9,9 @@ import UIKit
 
 final class SecondView: UIView {
 	private let scrollView = UIScrollView()
-	private var imageView = UIImageView()
-	private var titleLabel = UILabel()
-	private var textLabel = UILabel()
+	private let imageView = UIImageView()
+	private let titleLabel = UILabel()
+	private let textLabel = UILabel()
 	
 	private var compactConstraints: [NSLayoutConstraint] = []
 	private var regularConstraints: [NSLayoutConstraint] = []

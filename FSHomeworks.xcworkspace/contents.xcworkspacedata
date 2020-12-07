@@ -10,4 +10,10 @@
    <FileRef
       location = "group:FSHomework3/FSHomework3.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:FSHomework4/FSHomework4.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:FSHomework5/FSHomework5.xcodeproj">
+   </FileRef>
 </Workspace>

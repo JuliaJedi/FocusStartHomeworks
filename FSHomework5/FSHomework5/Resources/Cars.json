@@ -1,0 +1,23 @@
+[
+	{
+		"manufacturer": "Honda",
+		"model": "Civic",
+		"body": "hatchback",
+		"yearOfIssue": 1,
+		"carNumber": ""
+	},
+	{
+		"manufacturer": "Toyota",
+		"model": "Corolla",
+		"body": "sedan",
+		"yearOfIssue": 15,
+		"carNumber": "333"
+	},
+	{
+		"manufacturer": "VW",
+		"model": "Golf",
+		"body": "hatchback",
+		"yearOfIssue": 2,
+		"carNumber": "123"
+	}
+]
